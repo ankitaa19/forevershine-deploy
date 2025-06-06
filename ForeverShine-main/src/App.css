@@ -1,0 +1,16 @@
+.services-icon{
+    height: 30%;
+    width: 30%;
+    border-radius: none;
+    align-items: center;
+    background-color: #134E4A;
+    background: none;
+    margin-left: 45%;
+    
+}
+.services-icon img{
+    border-radius: 50%;
+    align-items: center;
+    text-align: center;
+
+}
