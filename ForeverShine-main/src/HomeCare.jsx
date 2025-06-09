@@ -94,9 +94,12 @@ export default function HomeCare() {
             key={index}
             className="flex flex-col items-center bg-white shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out p-4 transform hover:-translate-y-2 cursor-pointer"
           >
-            <Zoom>
-            <img src={product.image} alt={product.name} className="w-56 h-56 object-cover mb-3 shadow" /> </Zoom>
-            <span className="text-lg font-semibold text-gray-800 mb-1">{product.name}</span>
+            <Link to={`/product/${product.id}`} className="w-full">
+              <Zoom>
+                <img src={product.image} alt={product.name} className="w-56 h-56 object-cover mb-3 shadow" />
+              </Zoom>
+              <span className="text-lg font-semibold text-gray-800 mb-1">{product.name}</span>
+            </Link>
             <div className="flex items-center justify-between w-full mt-1">
               <span className="text-base font-bold text-teal-700">{product.priceDisplay}</span>
             </div>

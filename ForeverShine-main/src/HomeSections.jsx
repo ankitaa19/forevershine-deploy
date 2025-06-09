@@ -120,20 +120,22 @@ export default function HomeSections() {
           <div 
             key={idx} 
             className="flex flex-col items-start w-full bg-white shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out p-4 transform hover:-translate-y-2"
-          ><Zoom>
-            <img src={prod.image} alt={prod.name} className="w-full h-40 sm:h-48 md:h-56 object-cover mb-3 shadow" /> </Zoom>
-            <span className="text-base md:text-lg font-semibold text-gray-800 mb-1">{prod.name}</span>
-            <div className="flex items-sart justify-between w-full mt-1">
+          >
+            <Link to={`/product/${prod.id}`} className="w-full">
+              <Zoom>
+                <img src={prod.image} alt={prod.name} className="w-full h-40 sm:h-48 md:h-56 object-cover mb-3 shadow" />
+              </Zoom>
+              <span className="text-base md:text-lg font-semibold text-gray-800 mb-1">{prod.name}</span>
+            </Link>
+            <div className="product-price-container flex items-start justify-between w-full">
               <span className="text-sm md:text-base font-bold text-teal-700">{prod.price}</span>
-             
             </div>
             <button
               onClick={(e) => handleAddToCart(e, prod)}
-              className="w-full text-white bg-teal-700 hover:bg-teal-800 rounded-full p-2 shadow transition-colors duration-200 ml-2"
+              className="add-to-cart-button"
             >
-             
-                 <span className="text-sm md:text-base font-medium">ADD TO CART</span>
-              </button> 
+              <span className="text-sm md:text-base font-medium">ADD TO CART</span>
+            </button> 
           </div>
         ))}
       </div>
@@ -146,19 +148,21 @@ export default function HomeSections() {
             key={idx} 
             className="flex flex-col items-center w-full bg-white shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out p-4 transform hover:-translate-y-2"
           >
-            <Zoom>
-            <img src={prod.image} alt={prod.name} className="w-full h-40 sm:h-48 md:h-56 object-cover  mb-3 shadow" /> </Zoom>
-            <span className="text-base md:text-lg font-semibold text-gray-800 mb-1">{prod.name}</span>
-            <div className="flex items-center justify-between w-full mt-1">
+            <Link to={`/product/${prod.id}`} className="w-full">
+              <Zoom>
+                <img src={prod.image} alt={prod.name} className="w-full h-40 sm:h-48 md:h-56 object-cover mb-3 shadow" />
+              </Zoom>
+              <span className="text-base md:text-lg font-semibold text-gray-800 mb-1">{prod.name}</span>
+            </Link>
+            <div className="product-price-container flex items-center justify-between w-full">
               <span className="text-sm md:text-base font-bold text-teal-700">{prod.price}</span>
-              
             </div>
             <button
               onClick={(e) => handleAddToCart(e, prod)}
-              className="w-full text-white bg-teal-700 hover:bg-teal-800 rounded-full p-2 shadow transition-colors duration-200 ml-2"
+              className="add-to-cart-button"
             >
-                <span className="text-sm md:text-base font-medium">ADD TO CART</span>
-              </button>
+              <span className="text-sm md:text-base font-medium">ADD TO CART</span>
+            </button>
           </div>
         ))}
       </div>
@@ -177,8 +181,8 @@ export default function HomeSections() {
         <div className="max-w-6xl mx-auto px-4 md:px-0">
           <h2 className="text-3xl md:text-4xl font-extrabold mb-6 md:mb-10 text-left tracking-tight text-gray-900 drop-shadow">Services</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 text-center">
-            <div>
-              <div className="font-bold text-xl md:text-2xl mb-2 justify-cenetr">
+            <div className="flex flex-col items-center justify-center">
+              <div className="font-bold text-xl md:text-2xl mb-2 justify-center">
                 <div className='services-icon mb-1 flex justify-center items-center'><img src='https://icon-library.com/images/free-shipping-icon-vector/free-shipping-icon-vector-6.jpg'  className='shadow-xl border-4 border-gray-100 hover:scale-105 hover:shadow-2xl transition-all duration-300'/></div>
                 <span className="text-[#3422FF]">Free</span>
                 <span className="text-black"> Shipping</span>
@@ -186,7 +190,7 @@ export default function HomeSections() {
               
               <div className="text-base md:text-lg text-gray-800">Free shipping on all US order or above $200</div>
             </div>
-            <div>
+            <div className="flex flex-col items-center justify-center">
               
               <div className="font-bold text-xl md:text-2xl mb-2">
                 <div className='services-icon font-bold text-xl md:text-2xl mb-2'><img src='https://img.freepik.com/premium-vector/24x7-service-logo-design-everyday-vector-file_389740-725.jpg'  className='shadow-xl border-4 border-gray-100 hover:scale-105 hover:shadow-2xl transition-all duration-300'/></div>
@@ -195,7 +199,7 @@ export default function HomeSections() {
               </div>
               <div className="text-base md:text-lg text-gray-800">Contact us 24 hours a day, 7 days a week</div>
             </div>
-            <div>
+            <div className="flex flex-col items-center justify-center">
              
               <div className="font-bold text-xl md:text-2xl mb-2">
                  <div className='services-icon font-bold text-xl md:text-2xl mb-2'><img src='https://thumbs.dreamstime.com/b/flat-line-design-concept-icon-purchase-returns-support-delivery-process-online-order-procedure-website-banner-landing-page-120718997.jpg'  className='shadow-xl border-4 border-gray-100 hover:scale-105 hover:shadow-2xl transition-all duration-300'/></div>
@@ -204,12 +208,12 @@ export default function HomeSections() {
               </div>
               <div className="text-base md:text-lg text-gray-800">Simply return it within 30 days for an exchange</div>
             </div>
-            <div>
+            <div className="flex flex-col items-center justify-center">
               
               <div className="font-bold text-xl md:text-2xl mb-2">
                 <div className='services-icon font-bold text-xl md:text-2xl mb-2'><img src='https://logowik.com/content/uploads/images/secure-payment2785.jpg' className='shadow-xl border-4 border-gray-100 hover:scale-105 hover:shadow-2xl transition-all duration-300'/></div>
-                <span className="text-[#3422FF]">Payment Secure</span>
-                <span className="text-black"> Contact us 24 hours a day, 7 days a week</span>
+                <span className="text-[#3422FF]">Payment</span>
+                <span className="text-black"> Secure</span>
               </div>
 
               <div className="text-base md:text-lg text-gray-800">Contact us 24 hours a day, 7 days a week</div>

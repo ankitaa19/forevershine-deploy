@@ -434,15 +434,15 @@ export default function ProductDetails() {
               </div>
               <span className="text-green-600 font-semibold">In Stock ({product.stock})</span>
             </div>
-            <div className="flex items-center gap-4 mb-6">
-              <p className="text-3xl font-bold text-teal-700">{product.price}</p>
-              {product.originalPrice && (
-                <>
-                  <p className="text-xl text-gray-500 line-through">{product.originalPrice}</p>
-                  <span className="text-sm text-red-600">-10%</span>
-                </>
-              )}
-            </div>
+<div className="flex items-center justify-between w-full mt-1">
+  <p className="text-3xl font-bold text-teal-700">{product.price}</p>
+  {product.originalPrice && (
+    <>
+      <p className="text-xl text-gray-500 line-through">{product.originalPrice}</p>
+      <span className="text-sm text-red-600">-10%</span>
+    </>
+  )}
+</div>
             {product.sku && (
               <p className="text-sm text-gray-500 mb-4">SKU: {product.sku}</p>
             )}
@@ -499,16 +499,16 @@ export default function ProductDetails() {
                 +
               </button>
             </div>
-            <button 
-              onClick={handleAddToCart}
-              disabled={isAddingToCart}
-              className={`flex-1 bg-teal-600 text-white px-8 py-3 rounded-full hover:bg-teal-700 transition-all flex items-center justify-center gap-2 ${
-                isAddingToCart ? 'opacity-75 cursor-not-allowed' : ''
-              }`}
-            >
-              <ShoppingCartIcon className={`w-6 h-6 ${isAddingToCart ? 'animate-bounce' : ''}`} />
-              {isAddingToCart ? 'Adding...' : 'Add to Cart'}
-            </button>
+<button 
+  onClick={handleAddToCart}
+  disabled={isAddingToCart}
+  className={`flex-1 bg-teal-600 text-white px-8 py-3 rounded hover:bg-teal-700 transition-all flex items-center justify-center gap-2 mt-2 ${
+    isAddingToCart ? 'opacity-75 cursor-not-allowed' : ''
+  }`}
+>
+  <ShoppingCartIcon className={`w-6 h-6 ${isAddingToCart ? 'animate-bounce' : ''}`} />
+  {isAddingToCart ? 'Adding...' : 'Add to Cart'}
+</button>
           </div>
 
           <div className="border-t border-gray-200 pt-6">
