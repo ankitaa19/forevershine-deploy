@@ -1,0 +1,36 @@
+.services-icon {
+  height: auto;
+  width: auto;
+  max-width: 80px;
+  max-height: 80px;
+  border-radius: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  margin-left: 0;
+  margin: 0 auto;
+}
+
+.services-icon img {
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+  text-align: center;
+}
+
+/* Styles for react-medium-image-zoom */
+.react-medium-image-zoom-overlay {
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  transition: background-color 0.4s ease;
+}
+
+.react-medium-image-zoom-image {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 0.75rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  cursor: zoom-out;
+}
