@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useCart } from './context/CartContext';
 import PersonalCare from './images/Property 1=Group 8.jpg'
 import HomeCare from './images/Property 1=Component 7.jpg'
 import CarCare from './images/Property 1=1737913248.jpg'
@@ -85,6 +86,13 @@ const bestSellers = [
 ];
 
 export default function HomeSections() {
+  const { addToCart } = useCart();
+
+  const handleAddToCart = (e, product) => {
+    e.preventDefault();
+    addToCart(product, 1);
+  };
+
   return (
     <>
     <div className="max-w-6xl mx-auto px-4 md:px-0 py-8 md:py-12">
@@ -109,10 +117,9 @@ export default function HomeSections() {
       <h3 className="text-2xl md:text-3xl font-bold text-red-700 mb-4 md:mb-6 tracking-tight drop-shadow">Best Seller Deal</h3>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-8 md:mb-12">
         {bestSellers.map((prod, idx) => (
-          <Link 
+          <div 
             key={idx} 
-            to={`/product/${prod.id}`}
-            className="flex flex-col items-start w-full bg-white shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out p-4 transform hover:-translate-y-2 cursor-pointer"
+            className="flex flex-col items-start w-full bg-white shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out p-4 transform hover:-translate-y-2"
           ><Zoom>
             <img src={prod.image} alt={prod.name} className="w-full h-40 sm:h-48 md:h-56 object-cover mb-3 shadow" /> </Zoom>
             <span className="text-base md:text-lg font-semibold text-gray-800 mb-1">{prod.name}</span>
@@ -120,11 +127,14 @@ export default function HomeSections() {
               <span className="text-sm md:text-base font-bold text-teal-700">{prod.price}</span>
              
             </div>
-            <button className="w-full text-white bg-teal-700 hover:bg-teal-800 rounded-full p-2 shadow transition-colors duration-200 ml-2">
+            <button
+              onClick={(e) => handleAddToCart(e, prod)}
+              className="w-full text-white bg-teal-700 hover:bg-teal-800 rounded-full p-2 shadow transition-colors duration-200 ml-2"
+            >
              
                  <span className="text-sm md:text-base font-medium">ADD TO CART</span>
               </button> 
-          </Link>
+          </div>
         ))}
       </div>
 
@@ -132,10 +142,9 @@ export default function HomeSections() {
       <h3 className="text-2xl md:text-3xl font-bold text-red-700 mb-4 md:mb-6 tracking-tight drop-shadow">New Arrivals</h3>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-8 md:mb-12">
         {newArrivals.map((prod, idx) => (
-          <Link 
+          <div 
             key={idx} 
-            to={`/product/${prod.id}`}
-            className="flex flex-col items-center w-full bg-white shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out p-4 transform hover:-translate-y-2 cursor-pointer"
+            className="flex flex-col items-center w-full bg-white shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out p-4 transform hover:-translate-y-2"
           >
             <Zoom>
             <img src={prod.image} alt={prod.name} className="w-full h-40 sm:h-48 md:h-56 object-cover  mb-3 shadow" /> </Zoom>
@@ -144,10 +153,13 @@ export default function HomeSections() {
               <span className="text-sm md:text-base font-bold text-teal-700">{prod.price}</span>
               
             </div>
-            <button className="w-full text-white bg-teal-700 hover:bg-teal-800 rounded-full p-2 shadow transition-colors duration-200 ml-2">
+            <button
+              onClick={(e) => handleAddToCart(e, prod)}
+              className="w-full text-white bg-teal-700 hover:bg-teal-800 rounded-full p-2 shadow transition-colors duration-200 ml-2"
+            >
                 <span className="text-sm md:text-base font-medium">ADD TO CART</span>
               </button>
-          </Link>
+          </div>
         ))}
       </div>
       
@@ -197,6 +209,7 @@ export default function HomeSections() {
               <div className="font-bold text-xl md:text-2xl mb-2">
                 <div className='services-icon font-bold text-xl md:text-2xl mb-2'><img src='https://logowik.com/content/uploads/images/secure-payment2785.jpg' className='shadow-xl border-4 border-gray-100 hover:scale-105 hover:shadow-2xl transition-all duration-300'/></div>
                 <span className="text-[#3422FF]">Payment Secure</span>
+                <span className="text-black"> Contact us 24 hours a day, 7 days a week</span>
               </div>
 
               <div className="text-base md:text-lg text-gray-800">Contact us 24 hours a day, 7 days a week</div>
@@ -259,4 +272,4 @@ export default function HomeSections() {
     </div>
     </>
   );
-} 
+}

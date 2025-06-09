@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useCart } from './context/CartContext';
 import RoomFreshener from './images/RoomFreshner.webp';
 import Zoom from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'
@@ -23,6 +24,7 @@ const products = Array(16).fill(0).map((_, index) => {
 });
 
 export default function HomeCare() {
+  const { addToCart } = useCart();
   const [sortOrder, setSortOrder] = useState('default');
   const [filterText, setFilterText] = useState('');
   const [filteredProducts, setFilteredProducts] = useState(products);
@@ -50,6 +52,11 @@ export default function HomeCare() {
     setFilteredProducts(filtered);
     // Reset sort order when filtering
     setSortOrder('default');
+  };
+
+  const handleAddToCart = (e, product) => {
+    e.preventDefault();
+    addToCart(product, 1);
   };
 
   return (
@@ -83,9 +90,8 @@ export default function HomeCare() {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {filteredProducts.map((product, index) => (
-          <Link
+          <div
             key={index}
-            to={`/product/${product.id}`}
             className="flex flex-col items-center bg-white shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out p-4 transform hover:-translate-y-2 cursor-pointer"
           >
             <Zoom>
@@ -94,10 +100,13 @@ export default function HomeCare() {
             <div className="flex items-center justify-between w-full mt-1">
               <span className="text-base font-bold text-teal-700">{product.priceDisplay}</span>
             </div>
-            <button className="w-full text-white bg-teal-700 hover:bg-teal-800 p-2 shadow transition-colors duration-200 ml-2">
+            <button
+              onClick={(e) => handleAddToCart(e, product)}
+              className="w-full text-white bg-teal-700 hover:bg-teal-800 p-2 shadow transition-colors duration-200 ml-2 rounded"
+            >
               <span className="text-sm md:text-base font-medium">ADD TO CART</span>
             </button>
-          </Link>
+          </div>
         ))}
       </div>
     </div>

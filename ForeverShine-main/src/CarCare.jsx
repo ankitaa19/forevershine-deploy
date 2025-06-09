@@ -116,10 +116,10 @@ export default function CarCare() {
         {filteredProducts.map((product, index) => (
           <div
             key={index}
-            className="flex flex-col items-center bg-white shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out p-4 transform hover:-translate-y-2 cursor-pointer"
+            className="flex flex-col items-center bg-white shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out p-4 transform hover:-translate-y-2"
           >
             <Zoom zoomMargin={80} transitionDuration={400} zoomZindex={1000} overlayBgColorEnd="rgba(0, 0, 0, 0.85)">
-              <img src={product.image} alt={product.name} className="max-w-full max-h-56 h-auto mb-3 shadow-lg rounded-lg transition-transform duration-300 ease-in-out hover:scale-105" />
+              <img src={product.image} alt={product.name} className="w-56 h-56 object-cover mb-3 shadow" />
             </Zoom>
             <span className="text-lg font-semibold text-gray-800 mb-1">{product.name}</span>
             <div className="flex items-center justify-between w-full mt-1">
