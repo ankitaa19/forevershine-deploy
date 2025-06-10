@@ -86,25 +86,25 @@ export default function CarCare() {
   return (
     <div className="max-w-6xl mx-auto py-12 px-4">
       <h1 className="text-4xl font-extrabold mb-8 text-center tracking-tight text-gray-900 drop-shadow">Car Care Products</h1>
-      <div className="flex justify-end mb-6 gap-4">
-        <div>
-          <label htmlFor="filter" className="mr-2 font-semibold">Filter:</label>
+      <div className="flex flex-col sm:flex-row flex-wrap justify-between mb-6 gap-4">
+        <div className="w-full sm:w-auto flex items-center">
+          <label htmlFor="filter" className="mr-2 font-semibold whitespace-nowrap">Filter:</label>
           <input
             id="filter"
             type="text"
             value={filterText}
             onChange={handleFilterChange}
             placeholder="Filter by product name"
-            className="border border-teal-700 rounded p-2 text-teal-700 font-semibold bg-teal-100 shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-600"
+            className="w-full sm:w-auto border border-teal-700 rounded p-2 text-teal-700 font-semibold bg-teal-100 shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-600 placeholder:text-gray-500 text-sm md:text-base"
           />
         </div>
-        <div>
-          <label htmlFor="sort" className="mr-2 font-semibold">Sort By:</label>
+        <div className="w-full sm:w-auto flex items-center">
+          <label htmlFor="sort" className="mr-2 font-semibold whitespace-nowrap">Sort By:</label>
           <select
             id="sort"
             value={sortOrder}
             onChange={handleSortChange}
-            className="border border-teal-700 rounded p-2 text-teal-700 font-semibold bg-teal-100 shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-600"
+            className="w-full sm:w-auto border border-teal-700 rounded p-2 text-teal-700 font-semibold bg-teal-100 shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-600 text-sm md:text-base"
           >
             <option value="default">Default</option>
             <option value="price-asc">Price: Low to High</option>
@@ -120,19 +120,19 @@ export default function CarCare() {
           >
             <Link to={`/product/${product.id}`} className="w-full">
               <Zoom zoomMargin={80} transitionDuration={400} zoomZindex={1000} overlayBgColorEnd="rgba(0, 0, 0, 0.85)">
-                <img src={product.image} alt={product.name} className="w-56 h-56 object-cover mb-3 shadow" />
+                <img src={product.image} alt={product.name} className="w-full h-auto sm:w-56 sm:h-56 object-cover mb-3 shadow" />
               </Zoom>
               <span className="text-lg font-semibold text-gray-800 mb-1">{product.name}</span>
             </Link>
-<div className="flex items-center justify-between w-full mt-1">
-  <span className="text-base font-bold text-teal-700">{product.priceDisplay}</span>
-</div>
-<button
-  onClick={(e) => handleAddToCart(e, product)}
-  className="w-full text-white bg-teal-700 hover:bg-teal-800 p-2 shadow transition-colors duration-200 ml-2 rounded"
->
-  <span className="text-sm md:text-base font-medium">ADD TO CART</span>
-</button>
+            <div className="flex items-center justify-between w-full mt-1">
+              <span className="text-base font-bold text-teal-700">{product.priceDisplay}</span>
+            </div>
+            <button
+              onClick={(e) => handleAddToCart(e, product)}
+              className="w-full text-white bg-teal-700 hover:bg-teal-800 p-2 shadow transition-colors duration-200 ml-2 rounded"
+            >
+              <span className="text-sm md:text-base font-medium">ADD TO CART</span>
+            </button>
           </div>
         ))}
       </div>

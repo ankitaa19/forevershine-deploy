@@ -59,8 +59,8 @@ export default function Slider() {
   }, []);
 
   return (
-    <div 
-      className="relative w-full h-[25rem] sm:h-[30rem] md:h-[32rem] overflow-hidden rounded-none shadow-2xl bg-gradient-to-br from-white via-gray-50 to-teal-50"
+<div 
+      className="relative w-full h-[15rem] sm:h-[25rem] md:h-[30rem] overflow-hidden rounded-none shadow-2xl bg-gradient-to-br from-white via-gray-50 to-teal-50"
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}

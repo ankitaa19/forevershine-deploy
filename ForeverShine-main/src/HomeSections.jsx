@@ -107,7 +107,7 @@ export default function HomeSections() {
                 cat.name.includes('Home') ? '/home-care' : '/'}
             className="flex flex-col items-center border-2 border-teal-200 rounded-2xl p-4 md:p-6 w-full md:w-64 bg-white shadow-xl hover:shadow-2xl transition-shadow duration-300 ease-in-out transform hover:-translate-y-2 cursor-pointer"
           >
-            <img src={cat.icon} alt={cat.name} className="w-24 h-24 sm:w-32 sm:h-32 md:w-44 md:h-44 mb-4 rounded-xl shadow-md object-contain bg-gradient-to-br from-teal-50 to-white" />
+<img src={cat.icon} alt={cat.name} className="w-16 h-16 sm:w-24 sm:h-24 md:w-44 md:h-44 mb-4 rounded-xl shadow-md object-contain bg-gradient-to-br from-teal-50 to-white max-w-full max-h-full" />
             <span className="text-center text-lg md:text-xl font-bold mt-2 text-gray-800">{cat.name}</span>
           </Link>
         ))}
@@ -123,7 +123,7 @@ export default function HomeSections() {
               >
                 <Link to={`/product/${prod.id}`} className="w-full">
                   <Zoom>
-                    <img src={prod.image} alt={prod.name} className="w-full h-40 sm:h-48 md:h-56 object-cover mb-3 shadow" />
+                    <img src={prod.image} alt={prod.name} className="w-full h-auto sm:h-40 md:h-56 object-contain mb-3 shadow" />
                   </Zoom>
                   <span className="text-base md:text-lg font-semibold text-gray-800 mb-1">{prod.name}</span>
                 </Link>
@@ -150,7 +150,7 @@ export default function HomeSections() {
               >
                 <Link to={`/product/${prod.id}`} className="w-full">
                   <Zoom>
-                    <img src={prod.image} alt={prod.name} className="w-full h-40 sm:h-48 md:h-56 object-cover mb-3 shadow" />
+                    <img src={prod.image} alt={prod.name} className="w-full h-auto sm:h-40 md:h-56 object-contain mb-3 shadow" />
                   </Zoom>
                   <span className="text-base md:text-lg font-semibold text-gray-800 mb-1">{prod.name}</span>
                 </Link>
@@ -172,7 +172,7 @@ export default function HomeSections() {
       <img 
       src={Forevershine} 
       alt="Forever Shine" 
-      className="absolute inset-0 w-full h-full object-cover object-center bg-white" 
+      className="absolute inset-0 w-full h-full object-contain object-center bg-white" 
      />
       </div>
 
@@ -235,7 +235,7 @@ export default function HomeSections() {
     <img
       src={Blog1}
       alt="Blog 1"
-      className="w-full h-48 md:h-72 object-cover rounded-3xl shadow-xl border-4 border-gray-100 hover:scale-105 hover:shadow-2xl transition-all duration-300"
+      className="w-full max-w-full h-auto object-cover rounded-3xl shadow-xl border-4 border-gray-100 hover:scale-105 hover:shadow-2xl transition-all duration-300"
     />
     <span className='font-semibold'> Sandeep With Isha Deol. &nbsp;
     <Link to="/BlogOne" className="mt-3 text-black-200 font-light hover:underline transition duration-200">
@@ -248,7 +248,7 @@ export default function HomeSections() {
     <img
       src={Blog2}
       alt="Blog 2"
-      className="w-full h-48 md:h-72 object-cover rounded-3xl shadow-xl border-4 border-gray-100 hover:scale-105 hover:shadow-2xl transition-all duration-300"
+      className="w-full max-w-full h-auto object-cover rounded-3xl shadow-xl border-4 border-gray-100 hover:scale-105 hover:shadow-2xl transition-all duration-300"
     />
     <span className='font-semibold'> Sandeep With Isha Deol. &nbsp;
     <Link to="/BlogOne" className="mt-3 text-black-200 font-light hover:underline transition duration-200">
@@ -261,7 +261,7 @@ export default function HomeSections() {
     <img
       src={Blog3}
       alt="Blog 3"
-      className="w-full h-48 md:h-72 object-cover rounded-3xl shadow-xl border-4 border-gray-100 hover:scale-105 hover:shadow-2xl transition-all duration-300"
+      className="w-full max-w-full h-auto object-cover rounded-3xl shadow-xl border-4 border-gray-100 hover:scale-105 hover:shadow-2xl transition-all duration-300"
     />
     <span className='font-semibold'>  Press Conference at Delhi. &nbsp;
 
