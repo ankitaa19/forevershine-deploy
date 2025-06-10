@@ -115,57 +115,57 @@ export default function HomeSections() {
 
       {/* Best Seller Deal */}
       <h3 className="text-2xl md:text-3xl font-bold text-red-700 mb-4 md:mb-6 tracking-tight drop-shadow">Best Seller Deal</h3>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-8 md:mb-12">
-        {bestSellers.map((prod, idx) => (
-          <div 
-            key={idx} 
-            className="flex flex-col items-start w-full bg-white shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out p-4 transform hover:-translate-y-2"
-          >
-            <Link to={`/product/${prod.id}`} className="w-full">
-              <Zoom>
-                <img src={prod.image} alt={prod.name} className="w-full h-40 sm:h-48 md:h-56 object-cover mb-3 shadow" />
-              </Zoom>
-              <span className="text-base md:text-lg font-semibold text-gray-800 mb-1">{prod.name}</span>
-            </Link>
-            <div className="product-price-container flex items-start justify-between w-full">
-              <span className="text-sm md:text-base font-bold text-teal-700">{prod.price}</span>
-            </div>
-            <button
-              onClick={(e) => handleAddToCart(e, prod)}
-              className="add-to-cart-button"
-            >
-              <span className="text-sm md:text-base font-medium">ADD TO CART</span>
-            </button> 
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-8 md:mb-12">
+            {bestSellers.map((prod, idx) => (
+              <div 
+                key={idx} 
+                className="flex flex-col items-start w-full bg-white shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out p-4 transform hover:-translate-y-2"
+              >
+                <Link to={`/product/${prod.id}`} className="w-full">
+                  <Zoom>
+                    <img src={prod.image} alt={prod.name} className="w-full h-40 sm:h-48 md:h-56 object-cover mb-3 shadow" />
+                  </Zoom>
+                  <span className="text-base md:text-lg font-semibold text-gray-800 mb-1">{prod.name}</span>
+                </Link>
+                <div className="product-price-container flex items-start justify-between w-full">
+                  <span className="text-sm md:text-base font-bold text-teal-700">{prod.price}</span>
+                </div>
+                <button
+                  onClick={(e) => handleAddToCart(e, prod)}
+                  className="w-full text-white bg-teal-700 hover:bg-teal-800 p-2 shadow transition-colors duration-200 ml-2 rounded"
+                >
+                  <span className="text-sm md:text-base font-medium">ADD TO CART</span>
+                </button> 
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
 
       {/* New Arrivals */}
       <h3 className="text-2xl md:text-3xl font-bold text-red-700 mb-4 md:mb-6 tracking-tight drop-shadow">New Arrivals</h3>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-8 md:mb-12">
-        {newArrivals.map((prod, idx) => (
-          <div 
-            key={idx} 
-            className="flex flex-col items-center w-full bg-white shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out p-4 transform hover:-translate-y-2"
-          >
-            <Link to={`/product/${prod.id}`} className="w-full">
-              <Zoom>
-                <img src={prod.image} alt={prod.name} className="w-full h-40 sm:h-48 md:h-56 object-cover mb-3 shadow" />
-              </Zoom>
-              <span className="text-base md:text-lg font-semibold text-gray-800 mb-1">{prod.name}</span>
-            </Link>
-            <div className="product-price-container flex items-center justify-between w-full">
-              <span className="text-sm md:text-base font-bold text-teal-700">{prod.price}</span>
-            </div>
-            <button
-              onClick={(e) => handleAddToCart(e, prod)}
-              className="add-to-cart-button"
-            >
-              <span className="text-sm md:text-base font-medium">ADD TO CART</span>
-            </button>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-8 md:mb-12">
+            {newArrivals.map((prod, idx) => (
+              <div 
+                key={idx} 
+                className="flex flex-col items-center w-full bg-white shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out p-4 transform hover:-translate-y-2"
+              >
+                <Link to={`/product/${prod.id}`} className="w-full">
+                  <Zoom>
+                    <img src={prod.image} alt={prod.name} className="w-full h-40 sm:h-48 md:h-56 object-cover mb-3 shadow" />
+                  </Zoom>
+                  <span className="text-base md:text-lg font-semibold text-gray-800 mb-1">{prod.name}</span>
+                </Link>
+                <div className="product-price-container flex items-center justify-between w-full">
+                  <span className="text-sm md:text-base font-bold text-teal-700">{prod.price}</span>
+                </div>
+                <button
+                  onClick={(e) => handleAddToCart(e, prod)}
+                  className="w-full text-white bg-teal-700 hover:bg-teal-800 p-2 shadow transition-colors duration-200 ml-2 rounded"
+                >
+                  <span className="text-sm md:text-base font-medium">ADD TO CART</span>
+                </button>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
       
       {/* Forevershine Banner Section - Full Width */}
       <div className="relative w-full h-[20rem] md:h-[35rem] overflow-hidden mt-8 flex items-center justify-center animate-fadeInUp">

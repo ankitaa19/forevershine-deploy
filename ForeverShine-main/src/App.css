@@ -40,7 +40,7 @@
 
 /* New styles for product price and add to cart button */
 .product-price-container {
-  margin-bottom: 0.75rem; /* 12px */
+  margin-bottom: 0.25rem; /* 4px */
 }
 
 .add-to-cart-button {
